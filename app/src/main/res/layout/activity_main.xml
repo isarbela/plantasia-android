@@ -9,23 +9,25 @@
 
     <FrameLayout
         android:layout_width="500dp"
-        android:layout_height="600sp"
+        android:layout_height="700sp"
         android:background="@drawable/half_circle"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></FrameLayout>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224sp"
-        android:layout_marginStart="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/mulish"
         android:text="@string/label_your_plants"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:fontFamily="@font/mulish"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
