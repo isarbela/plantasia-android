@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pinkshwhite"
+    tools:context=".ui.NewPlantActivity">
+
+    <TextView
+        android:id="@+id/title_add_plant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mulish"
+        android:layout_marginTop="16sp"
+        android:text="@string/title_activity_new_plant"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:hint="@string/label_plant_name"
+        android:fontFamily="@font/mulish"
+        android:inputType="text"
+        android:minHeight="16sp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/title_add_plant" />
+
+    <EditText
+        android:id="@+id/age_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:hint="@string/label_plant_age"
+        android:fontFamily="@font/mulish"
+        android:inputType="number"
+        android:minHeight="16sp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/name_edittext" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/mulish"
+        android:textColor="@color/pinkshwhite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/button_save"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

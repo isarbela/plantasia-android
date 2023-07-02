@@ -1,5 +1,6 @@
-package com.example.plantasia.service
+package com.example.plantasia.repository.retrofit
 
+import com.example.plantasia.repository.Plant
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,7 +15,7 @@ interface PlantInterface {
     ): Call<Array<Plant>>
 
     @GET("species/details/{id}")
-     fun getPlantDetails(
+    fun getPlantDetails(
         @Path("id") id: String?,
         @Query("key") key: String?
     ): Call<Plant?>?

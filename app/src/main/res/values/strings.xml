@@ -3,4 +3,10 @@
     <string name="plantasia_title" translatable="false">Plantasia</string>
     <string name="add_plant">+ Adicionar Planta</string>
     <string name="label_your_plants">Suas Plantas</string>
+    <string name="empty_list">Você não adicionou nenhuma planta ainda :(</string>
+    <string name="button_save">Salvar Planta</string>
+    <string name="title_activity_new_plant">Adicionar Nova Planta</string>
+    <string name="label_plant_name">Nome</string>
+    <string name="label_plant_age">Idade (em semanas)</string>
+    <string name="label_plant_species">Espécie</string>
 </resources>

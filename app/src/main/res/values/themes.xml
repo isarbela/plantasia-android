@@ -4,5 +4,14 @@
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/mediumgreen</item>
     </style>
+
     <style name="Theme.Plantasia" parent="Base.Theme.Plantasia" />
+
+    <style name="plant_title">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:background">@android:color/holo_orange_light</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
 </resources>

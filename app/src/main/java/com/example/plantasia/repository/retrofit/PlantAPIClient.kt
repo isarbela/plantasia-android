@@ -1,4 +1,4 @@
-package com.example.plantasia.service
+package com.example.plantasia.repository.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
