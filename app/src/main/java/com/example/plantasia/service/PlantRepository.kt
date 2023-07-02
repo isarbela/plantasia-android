@@ -6,20 +6,20 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PlantRepository {
-    fun getPlantDetails(callback: PlantCallback) {
-        val client: PlantInterface =
-           PlantAPIClient.getClient()!!.create(PlantInterface::class.java)
-        val call: Call<Plant?>? = client.getPlantDetails(id = "1", key = "sk-hZ3g649f8c6a002541442")
-        call!!.enqueue(object : Callback<Plant?> {
-            override fun onResponse(call: Call<Plant?>, response: Response<Plant?>) {
-                callback.onSuccess(response.body())
-            }
-
-            override fun onFailure(call: Call<Plant?>, t: Throwable) {
-                callback.onError(t.message)
-            }
-        })
-    }
+//    public fun getPlantDetails(callback: PlantCallback) {
+//        val client: PlantInterface =
+//           PlantAPIClient.getClient()!!.create(PlantInterface::class.java)
+//        val call: Call<Plant?>? = client.getPlantDetails(id = "1", key = "sk-hZ3g649f8c6a002541442")
+//        call!!.enqueue(object : Callback<Plant?> {
+//            override fun onResponse(call: Call<Plant?>, response: Response<Plant?>) {
+//                callback.onSuccess(response.body())
+//            }
+//
+//            override fun onFailure(call: Call<Plant?>, t: Throwable) {
+//                callback.onError(t.message)
+//            }
+//        })
+//    }
 
     // set a generic callback interface
     interface PlantCallback {
