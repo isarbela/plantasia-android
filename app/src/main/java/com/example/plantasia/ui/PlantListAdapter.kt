@@ -13,6 +13,7 @@ import com.example.plantasia.repository.Plant
 
 class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(PlantsComparator()) {
 
+    var onItemClick : ( (Plant) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         return PlantViewHolder.create(parent)
     }
@@ -20,6 +21,9 @@ class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(Pla
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current.name, current.common_name, current.age)
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(current)
+        }
     }
 
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -5,16 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantasia.PlantasiaApplication
+import com.example.plantasia.R
 import com.example.plantasia.repository.Plant
-import com.example.plantasia.R as plantasiaR
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,10 +23,9 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(plantasiaR.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
-
-        val recyclerView = findViewById<RecyclerView>(plantasiaR.id.recyclerview)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = PlantListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -37,30 +34,33 @@ class MainActivity : AppCompatActivity() {
             plants -> plants.let { adapter.submitList(it) }
         }
 
-        val btAddPlant = findViewById<View>(plantasiaR.id.button_add_plant) as Button
+        val btAddPlant = findViewById<View>(R.id.button_add_plant) as Button
         btAddPlant.setOnClickListener {
             val intent = Intent(this@MainActivity, NewPlantActivity::class.java)
             startActivityForResult(intent, newPlantActivityRequestCode)
+        }
+
+        adapter.onItemClick = {
+            val intent = Intent(this, PlantDetailsActivity::class.java)
+            intent.putExtra("plant", it)
+            startActivity(intent)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == newPlantActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            val name = data?.getStringExtra(NewPlantActivity.EXTRA_REPLY)
-            val age = data?.getIntExtra(NewPlantActivity.EXTRA_REPLY_AGE, 0)
-            if (age != null && name != null) {
-                val plant = Plant(name=name, age = age)
-                plantViewModel.insert(plant)
-            }
+            val planta = data?.getSerializableExtra(NewPlantActivity.EXTRA_REPLY)
+            plantViewModel.insert(planta as Plant)
         } else {
             Toast.makeText(
                 applicationContext,
-                plantasiaR.string.empty_list,
+                R.string.error_add_plant,
                 Toast.LENGTH_LONG
             ).show()
         }
     }
+
 
 }
 

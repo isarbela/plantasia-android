@@ -9,13 +9,20 @@
 
     <FrameLayout
         android:id="@+id/semi_circle"
-        android:layout_width="500dp"
-        android:layout_height="700sp"
-        android:background="@drawable/half_circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/half_circle"
+            />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/title_your_plants"
@@ -49,6 +56,7 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="500sp"
+        android:paddingVertical="16sp"
         app:layoutManager="LinearLayoutManager"
         tools:listitem="@layout/recyclerview_item"
         app:layout_constraintLeft_toLeftOf="parent"

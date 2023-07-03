@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import com.example.plantasia.R
+import com.example.plantasia.repository.Plant
 
 class NewPlantActivity : AppCompatActivity() {
 
@@ -29,8 +30,8 @@ class NewPlantActivity : AppCompatActivity() {
             } else {
                 val name = editNameView.text.toString()
                 val age = editAgeView.text.toString().toInt()
-                replyIntent.putExtra(EXTRA_REPLY, name)
-                replyIntent.putExtra(EXTRA_REPLY_AGE, age)
+                val plant = Plant(name=name, age = age)
+                replyIntent.putExtra(EXTRA_REPLY, plant)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -43,7 +44,6 @@ class NewPlantActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_REPLY = "com.example.android.plantlistsql.REPLY"
-        const val EXTRA_REPLY_AGE = "com.example.android.plantlistsql.REPLY_AGE"
     }
 }
 
