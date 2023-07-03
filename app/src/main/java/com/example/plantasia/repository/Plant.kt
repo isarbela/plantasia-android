@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "plant_table")
 data class Plant(
-    @PrimaryKey @ColumnInfo(name = "id")
-    val id: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     @ColumnInfo(name = "name")
     val name: String? = null,
     @ColumnInfo(name = "common_name")

@@ -8,14 +8,14 @@
     tools:context=".ui.MainActivity">
 
     <FrameLayout
+        android:id="@+id/semi_circle"
         android:layout_width="500dp"
         android:layout_height="700sp"
         android:background="@drawable/half_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title_your_plants"
@@ -29,20 +29,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            tools:listitem="@layout/recyclerview_item"
-            android:padding="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_your_plants" />
+        app:layout_constraintTop_toTopOf="@id/semi_circle" />
 
     <TextView
         android:id="@android:id/empty"
@@ -53,8 +40,20 @@
         app:layout_constraintStart_toStartOf="@+id/title_your_plants"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:visibility="gone"
         android:fontFamily="@font/mulish"
         app:layout_constraintTop_toBottomOf="@id/title_your_plants"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="500sp"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/recyclerview_item"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_your_plants" />
 
     <Button
         android:id="@+id/button_add_plant"
@@ -64,7 +63,7 @@
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/mulish"
         android:text="@string/add_plant"
-        android:textColor="@color/pinkshwhite"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

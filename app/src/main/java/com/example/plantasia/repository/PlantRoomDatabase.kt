@@ -10,6 +10,7 @@ import com.example.plantasia.repository.PlantRoomDatabase.Companion.INSTANCE
 import com.example.plantasia.repository.dao.PlantDao
 import com.example.plantasia.utils.Converters
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
@@ -32,6 +33,7 @@ abstract class PlantRoomDatabase : RoomDatabase() {
                         PlantRoomDatabase::class.java,
                         "plant_database"
                 )
+                    .fallbackToDestructiveMigration()
                     .addCallback(PlantDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance
@@ -47,24 +49,21 @@ private class PlantDatabaseCallback(
 
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
-        INSTANCE.let { database ->
-            scope.launch {
-                if (database != null) {
-                    populateDatabase(database.plantDao())
-                }
+        INSTANCE?.let { database ->
+            scope.launch(Dispatchers.IO) {
+                populateDatabase(database.plantDao())
             }
         }
     }
 
     suspend fun populateDatabase(plantDao: PlantDao) {
         // Delete all content here.
-        plantDao.delete("1")
-        plantDao.delete("2")
+        plantDao.deleteAll()
 
-        // Add sample words.
-        var plant = Plant("1", "Cazalbé", "Daisy", age = 2)
+        // Add sample plants.
+        var plant = Plant(name="Cazalbé", common_name = "Daisy", age = 2)
         plantDao.insert(plant)
-        plant = Plant("2", "Junior", "Maple", age = 1)
+        plant = Plant(name = "Junior", common_name = "Maple", age = 1)
         plantDao.insert(plant)
     }
 }

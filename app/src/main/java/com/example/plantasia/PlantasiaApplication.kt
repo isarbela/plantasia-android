@@ -9,5 +9,5 @@ class PlantasiaApplication: Application() {
     val applicationScope = CoroutineScope(SupervisorJob())
 
     val database by lazy { PlantRoomDatabase.getDatabase(this, applicationScope) }
-        val repository by lazy { PlantRoomRepository(database.plantDao()) }
+    val repository by lazy { PlantRoomRepository(database.plantDao()) }
     }

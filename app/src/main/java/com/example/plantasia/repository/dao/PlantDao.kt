@@ -19,6 +19,9 @@ interface PlantDao {
         @Query("DELETE FROM plant_table WHERE id = :id")
         suspend fun delete(id: String)
 
+        @Query("DELETE FROM plant_table")
+        suspend fun deleteAll()
+
         @Update
         suspend fun update(plant: Plant)
 

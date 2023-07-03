@@ -8,4 +8,5 @@
     <string name="label_plant_name">Name</string>
     <string name="label_plant_age">Age (in weeks)</string>
     <string name="label_plant_species">Species</string>
+    <string name="label_weeks">Weeks</string>
 </resources>

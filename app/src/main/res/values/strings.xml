@@ -9,4 +9,5 @@
     <string name="label_plant_name">Nome</string>
     <string name="label_plant_age">Idade (em semanas)</string>
     <string name="label_plant_species">Espécie</string>
+    <string name="label_weeks">Semanas</string>
 </resources>

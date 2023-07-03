@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -18,15 +19,18 @@ class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(Pla
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.name)
-        holder.bind(current.common_name)
+        holder.bind(current.name, current.common_name, current.age)
     }
 
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val wordItemView: TextView = itemView.findViewById(R.id.textView)
+        private val nameTextView: TextView = itemView.findViewById(R.id.name_edittext)
+        private val speciesTextView: TextView = itemView.findViewById(R.id.species_edittext)
+        private val ageTextView: TextView = itemView.findViewById(R.id.age_edittext)
 
-        fun bind(text: String?) {
-            wordItemView.text = text
+        fun bind(name: String?, species: String?, age: Int?) {
+            nameTextView.text = name
+            speciesTextView.text = species
+            ageTextView.text = age.toString()
         }
 
         companion object {

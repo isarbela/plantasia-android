@@ -7,18 +7,31 @@
     android:background="@color/pinkshwhite"
     tools:context=".ui.NewPlantActivity">
 
+    <FrameLayout
+        android:id="@+id/semi_circle"
+        android:layout_width="500dp"
+        android:layout_height="700sp"
+        android:backgroundTint="@color/deepgreen"
+        android:background="@drawable/half_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/title_add_plant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mulish"
-        android:layout_marginTop="16sp"
+        android:layout_marginTop="120sp"
+        android:textColor="@color/pinkshwhite"
         android:text="@string/title_activity_new_plant"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/semi_circle" />
 
     <EditText
         android:id="@+id/name_edittext"
@@ -26,9 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="16sp"
         android:hint="@string/label_plant_name"
+        android:textColorHint="@color/pinkshwhite"
+        android:textColor="@color/pinkshwhite"
         android:fontFamily="@font/mulish"
         android:inputType="text"
-        android:minHeight="16sp"
+        android:minHeight="24sp"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/title_add_plant" />
 
@@ -37,12 +52,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16sp"
+        android:textColorHint="@color/pinkshwhite"
+        android:textColor="@color/pinkshwhite"
         android:hint="@string/label_plant_age"
         android:fontFamily="@font/mulish"
         android:inputType="number"
-        android:minHeight="16sp"
+        android:minHeight="24sp"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/name_edittext" />
+        app:layout_constraintTop_toBottomOf="@id/name_edittext"/>
 
     <Button
         android:id="@+id/button_save"
@@ -51,7 +68,7 @@
         android:layout_margin="16sp"
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/mulish"
-        android:textColor="@color/pinkshwhite"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
