@@ -9,4 +9,8 @@ class NewPlantActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_plant)
     }
+
+    fun onFinish() {
+        this@NewPlantActivity.finish()
+    }
 }
