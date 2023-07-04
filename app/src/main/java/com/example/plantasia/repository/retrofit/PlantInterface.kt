@@ -12,7 +12,7 @@ interface PlantInterface {
     fun getPlantsList(
         @Query("page") page: Number?,
         @Query("key") key: String?
-    ): Call<List<Plant>>
+    ): Call<PlantAPIResponse?>
 
     @GET("species/details/{id}")
     fun getPlantDetails(
@@ -20,3 +20,7 @@ interface PlantInterface {
         @Query("key") key: String?
     ): Call<Plant?>?
 }
+
+data class PlantAPIResponse(
+    val data: List<Plant>
+)

@@ -11,7 +11,6 @@ class PlantDetailsViewModel() : ViewModel() {
     val plantDetails = MutableLiveData<Plant?>()
     private var repo : PlantRepository ? = PlantRepository()
 
-
     fun getPlantDetails(id: String) {
         repo?.getPlantDetails(id, object : PlantRepository.PlantDetailsCallback {
             override fun onSuccess(plant: Plant?) {

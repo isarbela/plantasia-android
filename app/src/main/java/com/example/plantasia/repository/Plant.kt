@@ -25,5 +25,5 @@ data class Plant(
     @ColumnInfo(name = "care_level")
     val care_level: String? = null,
     @ColumnInfo(name = "age")
-    val age: Int = 0
+    val age: Int = 0,
 ): Serializable

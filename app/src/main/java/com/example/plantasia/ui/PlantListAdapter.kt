@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +13,7 @@ import com.example.plantasia.repository.Plant
 class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(PlantsComparator()) {
 
     var onItemClick : ( (Plant) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         return PlantViewHolder.create(parent)
     }
@@ -34,7 +34,8 @@ class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(Pla
         fun bind(name: String?, species: String?, age: Int?) {
             nameTextView.text = name
             speciesTextView.text = species
-            ageTextView.text = age.toString()
+            ageTextView.text = "%s"
+                .format(age.toString())
         }
 
         companion object {

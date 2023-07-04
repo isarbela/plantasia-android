@@ -5,8 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.plantasia.R
 import com.example.plantasia.repository.Plant
@@ -17,6 +20,9 @@ class NewPlantActivity : AppCompatActivity() {
     private lateinit var editNameView: EditText
     private lateinit var editAgeView: EditText
 
+    private val mainViewModel: MainViewModel by viewModels {
+        MainViewModelFactory()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_plant)
@@ -26,7 +32,6 @@ class NewPlantActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
-
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
@@ -42,6 +47,21 @@ class NewPlantActivity : AppCompatActivity() {
             }
             finish()
         }
+
+        var speciesArray = mutableListOf<String>()
+        mainViewModel.plantsList.observe(this) {
+            plants -> plants.let {
+                plants?.forEach { plant -> speciesArray.add(plant.common_name!!) }
+            }
+        }
+        mainViewModel.getPlantsList()
+
+        val adapter = ArrayAdapter<String>(this,
+            com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
+            speciesArray)
+
+        val spinner: Spinner = findViewById(R.id.species_spinner)
+        spinner.adapter = adapter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
