@@ -3,15 +3,18 @@ package com.example.plantasia.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantasia.PlantasiaApplication
 import com.example.plantasia.R
+import com.example.plantasia.databinding.ActivityMainBinding
 import com.example.plantasia.repository.Plant
 
 
@@ -21,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private val plantViewModel: PlantViewModel by viewModels {
         PlantViewModelFactory((application as PlantasiaApplication).repository)
     }
+    private val mainViewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,9 +35,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        plantViewModel.allPlants.observe( this) {
-            plants -> plants.let { adapter.submitList(it) }
-        }
+//        plantViewModel.allPlants.observe( this) {
+//            plants -> plants.let { adapter.submitList(it) }
+//        }
+        Log.v("PLANTAS", mainViewModel.toString())
+//        mainViewModel.plantsList.observe(this) {
+//            plants -> Log.v("PLANTS", plants.toString())
+//        }
 
         val btAddPlant = findViewById<View>(R.id.button_add_plant) as Button
         btAddPlant.setOnClickListener {
@@ -52,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == newPlantActivityRequestCode && resultCode == Activity.RESULT_OK) {
             val planta = data?.getSerializableExtra(NewPlantActivity.EXTRA_REPLY)
             plantViewModel.insert(planta as Plant)
-        } else {
+        } else if (resultCode != Activity.RESULT_CANCELED) {
             Toast.makeText(
                 applicationContext,
                 R.string.error_add_plant,

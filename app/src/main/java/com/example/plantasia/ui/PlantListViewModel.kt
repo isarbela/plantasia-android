@@ -11,19 +11,19 @@ import kotlinx.coroutines.launch
 
 class PlantViewModel(private val repository: PlantRoomRepository): ViewModel() {
 
-        val allPlants: LiveData<List<Plant>> = repository.allPlants.asLiveData()
+    val allPlants: LiveData<List<Plant>> = repository.allPlants.asLiveData()
 
-        fun insert(plant: Plant) = viewModelScope.launch {
-            repository.insert(plant)
-        }
+    fun insert(plant: Plant) = viewModelScope.launch {
+        repository.insert(plant)
     }
+}
 
-    class PlantViewModelFactory(private val repository: PlantRoomRepository) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(PlantViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return PlantViewModel(repository) as T
-            }
-            throw IllegalArgumentException("Unknown ViewModel class")
+class PlantViewModelFactory(private val repository: PlantRoomRepository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PlantViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return PlantViewModel(repository) as T
         }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
+}

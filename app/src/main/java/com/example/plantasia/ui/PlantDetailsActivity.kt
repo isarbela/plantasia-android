@@ -8,7 +8,6 @@ import com.example.plantasia.R
 import com.example.plantasia.repository.Plant
 
 class PlantDetailsActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_details)

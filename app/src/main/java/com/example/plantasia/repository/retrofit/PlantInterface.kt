@@ -12,7 +12,7 @@ interface PlantInterface {
     fun getPlantsList(
         @Query("page") page: Number?,
         @Query("key") key: String?
-    ): Call<Array<Plant>>
+    ): Call<List<Plant>>
 
     @GET("species/details/{id}")
     fun getPlantDetails(
