@@ -9,10 +9,11 @@ import com.example.plantasia.R
 import com.example.plantasia.repository.Plant
 import androidx.activity.viewModels
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 
 class PlantDetailsActivity : AppCompatActivity() {
 
-    private val detailsViewModel: PlantDetailsViewModel by viewModels()
+    private lateinit var detailsViewModel: PlantDetailsViewModel
     private lateinit var plantnameTV: TextView
     private lateinit var commonNameTV: TextView
     private lateinit var scientificNameLL: LinearLayout
@@ -27,10 +28,14 @@ class PlantDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plant_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        detailsViewModel = ViewModelProvider(this)[PlantDetailsViewModel::class.java]
+
+        val id = intent.getIntExtra("plant", 0)
 
         //Setting Views
         plantnameTV = findViewById(R.id.plantNameTV)
         commonNameTV = findViewById(R.id.commonNameTV)
+        scientificNameTV = findViewById(R.id.scientificNameTV)
         scientificNameLL = findViewById(R.id.scientificNameLL)
         cycleTV = findViewById(R.id.cycleTV)
         wateringTV = findViewById(R.id.wateringTV)
@@ -42,10 +47,10 @@ class PlantDetailsActivity : AppCompatActivity() {
             if (planta != null) {
                 plantnameTV.text = planta.name
                 commonNameTV.text = String().format(R.string.Common_name_label, planta.common_name)
-                cycleTV.text = String.format(R.string.Cycle_label, planta.cycle)
+                cycleTV.text = String().format(R.string.Cycle_label, planta.cycle)
                 wateringTV.text = String().format(R.string.Watering_label, planta.watering)
                 indoorTV.text = String().format(R.string.Indoor_label, planta.indoor)
-                carelevelTV.text = String.format(R.string.CareLevel_label, planta.care_level)
+                carelevelTV.text = String().format(R.string.CareLevel_label, planta.care_level)
                 ageTV.text = String().format(R.string.Age_label, planta.age.toString())
 
                 val arraySN = planta.scientific_name
@@ -61,6 +66,7 @@ class PlantDetailsActivity : AppCompatActivity() {
             }
         }
 
+        detailsViewModel.getPlantDetails(id.toString())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
