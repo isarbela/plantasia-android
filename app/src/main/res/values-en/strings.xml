@@ -13,4 +13,11 @@
     <string name="labelDetailsAttract">Attracts</string>
     <string name="labelDetailsPropagation">Propagation</string>
     <string name="LabelDetailsSunlight">Sun light</string>
+    <string name="labelDetailsScientificName">Scientific Names</string>
+    <string name="Common_name_label">Common name: </string>
+    <string name="Cycle_label">Cycle: </string>
+    <string name="Watering_label">Watering: </string>
+    <string name="Indoor_label">Indoor: </string>
+    <string name="CareLevel_label">Care level: </string>
+    <string name="Age_label">Age: </string>
 </resources>

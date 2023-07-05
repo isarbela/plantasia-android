@@ -23,4 +23,8 @@ class PlantDetailsViewModel() : ViewModel() {
             }
         })
     }
+
+    fun getPlant(): MutableLiveData<Plant?>{
+        return plantDetails
+    }
 }
