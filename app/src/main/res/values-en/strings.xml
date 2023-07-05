@@ -10,4 +10,7 @@
     <string name="label_plant_species">Species</string>
     <string name="label_weeks">Weeks</string>
     <string name="error_add_plant">Plant not added</string>
+    <string name="labelDetailsAttract">Attracts</string>
+    <string name="labelDetailsPropagation">Propagation</string>
+    <string name="LabelDetailsSunlight">Sun light</string>
 </resources>

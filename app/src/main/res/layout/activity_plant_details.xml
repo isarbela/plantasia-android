@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,12 +12,137 @@
         android:id="@+id/plantNameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Planta"
         android:layout_margin="16sp"
-        android:textColor="@color/pinkshwhite"
         android:fontFamily="@font/mulish"
-        android:textStyle="bold"
+        android:text="Planta"
+        android:textColor="@color/pinkshwhite"
         android:textSize="24sp"
-       app:layout_constraintTop_toTopOf="parent"/>
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/detailsSV"
+        android:layout_width="413dp"
+        android:layout_height="624dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantNameTV">
+
+        <LinearLayout
+            android:id="@+id/detailsLN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/commonNameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome Comum"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/scienticNameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome Científico"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/typeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TipoPlanta"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/cycleTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ciclo"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/wateringTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regar"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/attractsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/labelDetailsAttract"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/attractsLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/propagationTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/labelDetailsPropagation"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/propagationLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                android:id="@+id/flowersTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/flowerseasonTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/sunlightTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LabelDetailsSunlight"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/sunlightLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                android:id="@+id/fruitTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pinkshwhite"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

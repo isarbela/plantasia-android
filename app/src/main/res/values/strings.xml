@@ -11,4 +11,7 @@
     <string name="label_plant_species">Espécie</string>
     <string name="label_weeks">Semanas</string>
     <string name="error_add_plant">Não foi possível adicionar a planta</string>
+    <string name="labelDetailsAttract">Atrai</string>
+    <string name="labelDetailsPropagation">Propagação</string>
+    <string name="LabelDetailsSunlight">Luz do sol</string>
 </resources>
