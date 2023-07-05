@@ -20,4 +20,5 @@
     <string name="Indoor_label">Indoor: </string>
     <string name="CareLevel_label">Care level: </string>
     <string name="Age_label">Age: </string>
+    <string name="spinner_placeholder">Choose the species</string>
 </resources>

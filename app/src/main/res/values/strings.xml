@@ -20,5 +20,6 @@
     <string name="labelDetailsAttract">Atrai</string>
     <string name="labelDetailsPropagation">Propagação</string>
     <string name="LabelDetailsSunlight">Luz do sol</string>
+    <string name="spinner_placeholder">Escolha a espécie</string>
     <string name="labelDetailsScientificName">Nomes Científicos</string>
 </resources>

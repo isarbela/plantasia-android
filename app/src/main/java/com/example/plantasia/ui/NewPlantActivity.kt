@@ -33,6 +33,24 @@ class NewPlantActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
+        val speciesArray = mutableListOf<String>()
+        speciesArray.add(getString(R.string.spinner_placeholder))
+
+        mainViewModel.plantsList.observe(this) {
+                plants -> plants.let {
+            plants?.forEach { plant -> speciesArray.add(plant.common_name!!) }
+        }
+        }
+
+        mainViewModel.getPlantsList()
+
+        val adapter = ArrayAdapter(this,
+            R.layout.spinner_item,
+            speciesArray)
+
+        val spinner: Spinner = findViewById(R.id.species_spinner)
+        spinner.adapter = adapter
+
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
             val replyIntent = Intent()
@@ -41,27 +59,14 @@ class NewPlantActivity : AppCompatActivity() {
             } else {
                 val name = editNameView.text.toString()
                 val age = editAgeView.text.toString().toInt()
-                val plant = Plant(name=name, age = age)
+                val specie = spinner.selectedItem.toString()
+                val plant = Plant(name=name, age = age, common_name = specie)
                 replyIntent.putExtra(EXTRA_REPLY, plant)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
         }
 
-        var speciesArray = mutableListOf<String>()
-        mainViewModel.plantsList.observe(this) {
-            plants -> plants.let {
-                plants?.forEach { plant -> speciesArray.add(plant.common_name!!) }
-            }
-        }
-        mainViewModel.getPlantsList()
-
-        val adapter = ArrayAdapter<String>(this,
-            com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
-            speciesArray)
-
-        val spinner: Spinner = findViewById(R.id.species_spinner)
-        spinner.adapter = adapter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
