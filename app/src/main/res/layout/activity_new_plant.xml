@@ -50,7 +50,7 @@
         android:textColor="@color/pinkshwhite"
         android:fontFamily="@font/mulish"
         android:inputType="text"
-        android:minHeight="24sp"
+        android:minHeight="48sp"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/title_add_plant" />
 
@@ -64,19 +64,21 @@
         android:hint="@string/label_plant_age"
         android:fontFamily="@font/mulish"
         android:inputType="number"
-        android:minHeight="24sp"
+        android:minHeight="48sp"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/name_edittext"/>
 
     <Spinner
         android:id="@+id/species_spinner"
-        android:minHeight="24sp"
+        android:minHeight="48sp"
         android:textSize="18sp"
-        android:layout_width="match_parent"
         android:layout_margin="16sp"
+        android:layout_width="match_parent"
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/mediumgreen"
+        app:layout_constraintStart_toStartOf="@id/name_edittext"
         app:layout_constraintTop_toBottomOf="@id/age_edittext"
-        android:textColor="@color/pinkshwhite"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/button_save"

@@ -13,4 +13,5 @@
     <string name="labelDetailsAttract">Attracts</string>
     <string name="labelDetailsPropagation">Propagation</string>
     <string name="LabelDetailsSunlight">Sun light</string>
+    <string name="spinner_placeholder">Choose the species</string>
 </resources>
