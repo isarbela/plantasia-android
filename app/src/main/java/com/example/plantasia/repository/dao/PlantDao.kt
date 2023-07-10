@@ -25,4 +25,7 @@ interface PlantDao {
         @Update
         suspend fun update(plant: Plant)
 
+        @Query("SELECT * FROM plant_table WHERE id = :plantId")
+        fun getPlant(plantId: Int): Flow<Plant>
+
 }

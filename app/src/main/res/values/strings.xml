@@ -11,15 +11,15 @@
     <string name="label_plant_species">Espécie</string>
     <string name="label_weeks">Semanas</string>
     <string name="error_add_plant">Não foi possível adicionar a planta</string>
-    <string name="Common_name_label">Nome comum: </string>
-    <string name="Cycle_label">Ciclo: </string>
-    <string name="Watering_label">Rega: </string>
-    <string name="Indoor_label">Interna: </string>
-    <string name="CareLevel_label">Necessidade de cuidado: </string>
-    <string name="Age_label">Idade: </string>
+    <string name="Common_name_label">Nome comum: %s </string>
+    <string name="Cycle_label">Ciclo: %s</string>
+    <string name="Watering_label">Rega: %s</string>
+    <string name="Indoor_label">Interna:  %s</string>
+    <string name="CareLevel_label">Necessidade de cuidado: %s</string>
+    <string name="Age_label">Idade: %s </string>
     <string name="labelDetailsAttract">Atrai</string>
     <string name="labelDetailsPropagation">Propagação</string>
     <string name="LabelDetailsSunlight">Luz do sol</string>
     <string name="spinner_placeholder">Escolha a espécie</string>
-    <string name="labelDetailsScientificName">Nomes Científicos</string>
+    <string name="labelDetailsScientificName">Nomes Científicos: %s</string>
 </resources>

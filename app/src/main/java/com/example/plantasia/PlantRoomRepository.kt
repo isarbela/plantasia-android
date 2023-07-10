@@ -14,4 +14,6 @@ class PlantRoomRepository(private val plantDao: PlantDao) {
             plantDao.insert(plant)
         }
 
+        fun getPlant(plantId: Int) = plantDao.getPlant(plantId)
+
     }

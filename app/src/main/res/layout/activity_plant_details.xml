@@ -39,6 +39,7 @@
                 android:id="@+id/commonNameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/Common_name_label"
                 android:textColor="@color/pinkshwhite"
                 android:textSize="20sp" />
 
@@ -54,7 +55,7 @@
                 android:id="@+id/scientificNameLL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical" />
 
             <TextView
                 android:id="@+id/cycleTV"
