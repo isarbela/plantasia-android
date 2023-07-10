@@ -22,7 +22,6 @@ class PlantDetailsActivity : AppCompatActivity() {
 
     private lateinit var plantnameTV: TextView
     private lateinit var commonNameTV: TextView
-    private lateinit var scientificNameLL: LinearLayout
     private lateinit var scientificNameTV: TextView
     private lateinit var cycleTV: TextView
     private lateinit var wateringTV: TextView
@@ -42,13 +41,11 @@ class PlantDetailsActivity : AppCompatActivity() {
         plantnameTV = findViewById(R.id.plantNameTV)
         commonNameTV = findViewById(R.id.commonNameTV)
         scientificNameTV = findViewById(R.id.scientificNameTV)
-        scientificNameLL = findViewById(R.id.scientificNameLL)
         cycleTV = findViewById(R.id.cycleTV)
         wateringTV = findViewById(R.id.wateringTV)
         indoorTV = findViewById(R.id.indoorTV)
         carelevelTV = findViewById(R.id.carelevelTV)
         ageTV = findViewById(R.id.ageTV)
-
 
 
         detailsViewModel.getPlant(id).asLiveData().observe(this) { planta ->
@@ -61,17 +58,6 @@ class PlantDetailsActivity : AppCompatActivity() {
                 wateringTV.text = String.format(resources.getString(R.string.Watering_label), planta.watering)
                 indoorTV.text = String.format(resources.getString(R.string.Indoor_label), planta.indoor)
                 carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level)
-
-                val arraySN = planta.scientific_name
-                if (arraySN != null) {
-                    for (text in arraySN) {
-                        val textView = TextView(this)
-                        textView.text = text
-                        scientificNameLL.addView(textView)
-                    }
-                } else {
-                    scientificNameLL.removeAllViews()
-                }
             }
         }
     }

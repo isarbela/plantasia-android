@@ -24,10 +24,11 @@
         android:id="@+id/scrollView2"
         android:layout_width="380dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/mulish"
+        app:layout_constraintStart_toStartOf="@id/plantNameTV"
         app:layout_constraintTop_toBottomOf="@+id/plantNameTV">
 
         <LinearLayout
@@ -40,61 +41,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Common_name_label"
+                android:fontFamily="@font/mulish"
                 android:textColor="@color/pinkshwhite"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginBottom="8sp"/>
 
             <TextView
                 android:id="@+id/scientificNameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/mulish"
                 android:text="@string/labelDetailsScientificName"
                 android:textColor="@color/pinkshwhite"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:id="@+id/scientificNameLL"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
+                android:textSize="20sp"
+                android:layout_marginBottom="8sp"/>
 
             <TextView
                 android:id="@+id/cycleTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/mulish"
+                android:text="@string/Cycle_label"
                 android:textColor="@color/pinkshwhite"
+                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/wateringTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/mulish"
+                android:text="@string/Watering_label"
                 android:textColor="@color/pinkshwhite"
+                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/indoorTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/mulish"
+                android:text="@string/Indoor_label"
                 android:textColor="@color/pinkshwhite"
+                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/carelevelTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/mulish"
+                android:text="@string/CareLevel_label"
                 android:textColor="@color/pinkshwhite"
+                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/ageTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/mulish"
+                android:text="@string/Age_label"
                 android:textColor="@color/pinkshwhite"
+                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
         </LinearLayout>

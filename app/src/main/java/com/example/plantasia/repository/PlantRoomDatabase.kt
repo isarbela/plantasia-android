@@ -49,22 +49,11 @@ private class PlantDatabaseCallback(
 
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
-        INSTANCE?.let { database ->
+        INSTANCE?.let {
             scope.launch(Dispatchers.IO) {
-                populateDatabase(database.plantDao())
             }
         }
     }
 
-    suspend fun populateDatabase(plantDao: PlantDao) {
-        // Delete all content here.
-        plantDao.deleteAll()
-
-        // Add sample plants.
-        var plant = Plant(name="Cazalbé", common_name = "Daisy", age = 2)
-        plantDao.insert(plant)
-        plant = Plant(name = "Junior", common_name = "Maple", age = 1)
-        plantDao.insert(plant)
-    }
 }
 
