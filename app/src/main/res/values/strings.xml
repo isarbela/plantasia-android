@@ -16,7 +16,7 @@
     <string name="Watering_label">Rega: %s</string>
     <string name="Indoor_label">Interna:  %s</string>
     <string name="CareLevel_label">Necessidade de cuidado: %s</string>
-    <string name="Age_label">Idade: %s </string>
+    <string name="Age_label">Idade: %s semanas</string>
     <string name="labelDetailsAttract">Atrai</string>
     <string name="labelDetailsPropagation">Propagação</string>
     <string name="LabelDetailsSunlight">Luz do sol</string>
@@ -24,4 +24,5 @@
     <string name="labelDetailsScientificName">Nomes Científicos: %s</string>
     <string name="plant">Planta</string>
     <string name="delete_plant_label">Deletar planta</string>
+    <string name="notAvailable">Indisponível</string>
 </resources>

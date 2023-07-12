@@ -6,13 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.plantasia.R
-import com.example.plantasia.repository.Plant
 import androidx.activity.viewModels
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import com.example.plantasia.PlantasiaApplication
 
@@ -58,11 +54,15 @@ class PlantDetailsActivity : AppCompatActivity() {
                 Log.i("PlantDetails", planta.toString())
                 plantnameTV.text = planta.name
                 commonNameTV.text = String.format(resources.getString(R.string.Common_name_label), planta.common_name)
+                scientificNameTV.text = String
+                    .format(resources.getString(R.string.labelDetailsScientificName),
+                       if (!planta.scientific_name.isNullOrEmpty()) planta.scientific_name.toString().filter { it != '[' && it != ']'}
+                       else resources.getString(R.string.notAvailable))
                 ageTV.text = String.format(resources.getString(R.string.Age_label), planta.age)
-                cycleTV.text = String.format(resources.getString(R.string.Cycle_label), planta.cycle)
-                wateringTV.text = String.format(resources.getString(R.string.Watering_label), planta.watering)
-                indoorTV.text = String.format(resources.getString(R.string.Indoor_label), planta.indoor)
-                carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level)
+                cycleTV.text = String.format(resources.getString(R.string.Cycle_label), planta.cycle ?: resources.getString(R.string.notAvailable))
+                wateringTV.text = String.format(resources.getString(R.string.Watering_label), planta.watering ?: resources.getString(R.string.notAvailable))
+                indoorTV.text = String.format(resources.getString(R.string.Indoor_label), planta.indoor ?: resources.getString(R.string.notAvailable))
+                carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level ?: resources.getString(R.string.notAvailable))
             }
         }
 
