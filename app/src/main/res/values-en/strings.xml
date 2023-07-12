@@ -21,4 +21,6 @@
     <string name="CareLevel_label">Care level: %s </string>
     <string name="Age_label">Age: %s</string>
     <string name="spinner_placeholder">Choose the species</string>
+    <string name="plant">Plant</string>
+    <string name="delete_plant_label">Delete plant</string>
 </resources>

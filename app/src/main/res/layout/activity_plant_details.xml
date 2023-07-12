@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16sp"
         android:fontFamily="@font/mulish"
-        android:text="Planta"
+        android:text="@string/plant"
         android:textColor="@color/pinkshwhite"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -105,9 +105,23 @@
                 android:textColor="@color/pinkshwhite"
                 android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
-
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_plant_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/mulish"
+        android:drawableTint="@color/pinkshwhite"
+        android:drawableLeft="@drawable/baseline_delete_24"
+        android:layout_margin="16sp"
+        android:textSize="16sp"
+        android:backgroundTint="@color/mediumgreen"
+        android:textColor="@color/pinkshwhite"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

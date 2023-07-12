@@ -6,4 +6,8 @@
     <color name="pinkshwhite">#F2E3DB</color>
     <color name="mediumgreen">#41644A</color>
     <color name="orange">#E86A33</color>
+    <color name="redalert">#D61F1F</color>
+    <color name="yellowalert">#FFD301</color>
+    <color name="greenalert">#7BB662</color>
+
 </resources>

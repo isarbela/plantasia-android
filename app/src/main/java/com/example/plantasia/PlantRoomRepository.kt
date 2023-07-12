@@ -16,4 +16,7 @@ class PlantRoomRepository(private val plantDao: PlantDao) {
 
         fun getPlant(plantId: Int) = plantDao.getPlant(plantId)
 
+        @WorkerThread
+        suspend fun deletePlant(plantId: Int) = plantDao.delete(plantId.toString());
+
     }

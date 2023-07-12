@@ -1,9 +1,11 @@
 package com.example.plantasia.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.plantasia.R
@@ -28,6 +30,8 @@ class PlantDetailsActivity : AppCompatActivity() {
     private lateinit var indoorTV: TextView
     private lateinit var carelevelTV: TextView
     private lateinit var ageTV: TextView
+    private lateinit var deleteButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -46,6 +50,7 @@ class PlantDetailsActivity : AppCompatActivity() {
         indoorTV = findViewById(R.id.indoorTV)
         carelevelTV = findViewById(R.id.carelevelTV)
         ageTV = findViewById(R.id.ageTV)
+        deleteButton = findViewById(R.id.deleteButton)
 
 
         detailsViewModel.getPlant(id).asLiveData().observe(this) { planta ->
@@ -60,7 +65,14 @@ class PlantDetailsActivity : AppCompatActivity() {
                 carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level)
             }
         }
+
+        deleteButton.setOnClickListener {
+            detailsViewModel.deletePlant(id)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // handle arrow click here
