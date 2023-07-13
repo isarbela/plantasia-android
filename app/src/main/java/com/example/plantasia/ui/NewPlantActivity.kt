@@ -66,7 +66,7 @@ class NewPlantActivity : AppCompatActivity() {
             val replyIntent = Intent()
             val errorPlant = findViewById<CardView>(R.id.errorAddPlantCV)
             val idApi = spinner.selectedItemId - 1
-            if (TextUtils.isEmpty(editNameView.text) || TextUtils.isEmpty(editAgeView.text) || (idApi < 1)){
+            if (TextUtils.isEmpty(editNameView.text) || TextUtils.isEmpty(editAgeView.text) || (idApi < 0)){
                 errorPlant.visibility = View.VISIBLE
             } else {
                 errorPlant.visibility = View.INVISIBLE
