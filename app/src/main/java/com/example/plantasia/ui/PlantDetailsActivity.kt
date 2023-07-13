@@ -11,6 +11,7 @@ import com.example.plantasia.R
 import androidx.activity.viewModels
 import androidx.lifecycle.asLiveData
 import com.example.plantasia.PlantasiaApplication
+import com.example.plantasia.repository.Plant
 
 class PlantDetailsActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class PlantDetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val id = intent.getIntExtra("plant", 0)
+        val plant: Plant = intent.getSerializableExtra("plant") as Plant
 
         //Setting Views
         plantnameTV = findViewById(R.id.plantNameTV)
@@ -49,7 +50,7 @@ class PlantDetailsActivity : AppCompatActivity() {
         deleteButton = findViewById(R.id.deleteButton)
 
 
-        detailsViewModel.getPlant(id).asLiveData().observe(this) { planta ->
+        detailsViewModel.getPlant(plant.Roomid).asLiveData().observe(this) { planta ->
             if (planta != null) {
                 Log.i("PlantDetailsRoom", planta.toString())
                 plantnameTV.text = planta.name
@@ -78,10 +79,10 @@ class PlantDetailsActivity : AppCompatActivity() {
                 carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level ?: resources.getString(R.string.notAvailable))
             }
         }
-        detailsViewModel.getPlantDetails(id)
+        detailsViewModel.getPlantDetails(plant.id + 1)
 
         deleteButton.setOnClickListener {
-            detailsViewModel.deletePlant(id)
+            detailsViewModel.deletePlant(plant.Roomid)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

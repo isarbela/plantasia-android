@@ -9,6 +9,8 @@ import java.io.Serializable
 @Entity(tableName = "plant_table")
 data class Plant(
     @PrimaryKey(autoGenerate = true)
+    val Roomid: Int = 0,
+    @ColumnInfo(name= "id")
     val id: Int = 0,
     @ColumnInfo(name = "name")
     val name: String? = null,

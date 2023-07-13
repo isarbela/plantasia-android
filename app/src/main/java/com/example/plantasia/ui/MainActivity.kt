@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter.onItemClick = {
             val intent = Intent(this, PlantDetailsActivity::class.java)
-            intent.putExtra("plant", it.id)
+            intent.putExtra("plant", it)
             startActivity(intent)
         }
     }

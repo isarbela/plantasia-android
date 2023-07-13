@@ -54,7 +54,7 @@ class PlantListAdapter(val context: Context) : ListAdapter<Plant, PlantListAdapt
         }
 
         override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.Roomid == newItem.Roomid
         }
     }
 }

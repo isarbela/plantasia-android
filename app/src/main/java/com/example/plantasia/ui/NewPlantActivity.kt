@@ -87,6 +87,7 @@ class NewPlantActivity : AppCompatActivity() {
         return Plant(
             name = name,
             age = age,
+            id = idApi.toInt(),
             common_name = commonName,
             scientific_name = plantApi.scientific_name,
             cycle = plantApi.cycle,

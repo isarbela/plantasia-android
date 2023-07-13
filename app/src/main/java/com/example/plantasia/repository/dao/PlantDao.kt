@@ -16,7 +16,7 @@ interface PlantDao {
         @Insert(onConflict = OnConflictStrategy.IGNORE)
         suspend fun insert(plant: Plant)
 
-        @Query("DELETE FROM plant_table WHERE id = :id")
+        @Query("DELETE FROM plant_table WHERE Roomid = :id")
         suspend fun delete(id: String)
 
         @Query("DELETE FROM plant_table")
@@ -25,7 +25,7 @@ interface PlantDao {
         @Update
         suspend fun update(plant: Plant)
 
-        @Query("SELECT * FROM plant_table WHERE id = :plantId")
+        @Query("SELECT * FROM plant_table WHERE Roomid = :plantId")
         fun getPlant(plantId: Int): Flow<Plant>
 
 }
