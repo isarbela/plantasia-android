@@ -1,6 +1,7 @@
 package com.example.plantasia.repository
 
 import android.util.Log
+import com.example.plantasia.BuildConfig
 import com.example.plantasia.repository.retrofit.PlantAPIResponse
 import com.example.plantasia.repository.retrofit.RetrofitInstance
 import retrofit2.Call
@@ -9,8 +10,8 @@ import retrofit2.Response
 
 class PlantRepository() {
 
-    private val _appkey: String = "sk-hZ3g649f8c6a002541442"
-    fun getPlantDetails(id: String, cb: PlantDetailsCallback) {
+    private val _appkey: String = BuildConfig.API_KEY
+    fun getPlantDetails(id: Int, cb: PlantDetailsCallback) {
         RetrofitInstance.api.getPlantDetails(id, _appkey)?.enqueue(object : Callback<Plant?> {
 
             override fun onResponse(call: Call<Plant?>?, response: Response<Plant?>?) {

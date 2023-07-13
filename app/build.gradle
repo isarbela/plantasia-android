@@ -6,10 +6,16 @@ plugins {
 apply plugin: 'kotlin-kapt'
 
 android {
+    
+    def apikeyPropertiesFile = rootProject.file("api_key.properties")
+    def apikeyProperties = new Properties()
+    apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
     namespace 'com.example.plantasia'
     compileSdk 33
 
     defaultConfig {
+
         applicationId "com.example.plantasia"
         minSdk 24
         targetSdk 33
@@ -20,6 +26,8 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        buildConfigField("String", "API_KEY", apikeyProperties['api_key'])
     }
 
     buildFeatures {

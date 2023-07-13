@@ -13,7 +13,7 @@
     <string name="labelDetailsAttract">Attracts</string>
     <string name="labelDetailsPropagation">Propagation</string>
     <string name="LabelDetailsSunlight">Sun light</string>
-    <string name="labelDetailsScientificName">Scientific Names</string>
+    <string name="labelDetailsScientificName">Scientific Names: %s</string>
     <string name="Common_name_label">Common name: %s </string>
     <string name="Cycle_label">Cycle: %s</string>
     <string name="Watering_label">Watering: %s</string>
