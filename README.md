@@ -1,9 +1,9 @@
 # Plantasia :herb: - Android
 Este é um projeto Android de gerenciamento de plantas, onde os usuários podem acompanhar suas plantas e ter informações sobre elas em um só lugar. O projeto foi desenvolvido para disciplina de Desenvolvimento Móvel da Universidade Federal de São Carlos pelos seguintes alunos:
 
- - # Gabriel Penajo Machado
- - # Isabela Vieira Magalhães
- - # Matteus Guilherme de Souza
+ - Gabriel Penajo Machado
+ - Isabela Vieira Magalhães
+ - Matteus Guilherme de Souza
 
 # Recursos 🕶️
 
