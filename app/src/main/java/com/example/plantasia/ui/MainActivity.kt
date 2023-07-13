@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -27,13 +28,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val emptyList = findViewById<TextView>(R.id.emptyTV)
         val adapter = PlantListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         plantViewModel.allPlants.observe( this) {
             plants -> plants.let { adapter.submitList(it) }
+            if (adapter.currentList.isEmpty()){
+                emptyList.visibility = View.VISIBLE
+            } else {
+                emptyList.visibility = View.INVISIBLE
+            }
+
         }
+
 
         val btAddPlant = findViewById<View>(R.id.button_add_plant) as Button
         btAddPlant.setOnClickListener {

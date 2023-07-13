@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@id/semi_circle" />
 
     <TextView
-        android:id="@android:id/empty"
+        android:id="@+id/emptyTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/empty_list"
