@@ -17,8 +17,8 @@ class PlantDetailsViewModel(private val repository: PlantRoomRepository) : ViewM
     private var repo : PlantRepository = PlantRepository()
 
 
-    fun getPlantDetails(id: String) {
-        repo.getPlantDetails(id, object : PlantRepository.PlantDetailsCallback {
+    fun getPlantDetails(id: Int) {
+        return repo.getPlantDetails(id, object : PlantRepository.PlantDetailsCallback {
             override fun onSuccess(plant: Plant?) {
                 Log.d("MainViewModel", plant.toString())
                 plantDetails.value = plant

@@ -51,7 +51,7 @@ class PlantDetailsActivity : AppCompatActivity() {
 
         detailsViewModel.getPlant(id).asLiveData().observe(this) { planta ->
             if (planta != null) {
-                Log.i("PlantDetails", planta.toString())
+                Log.i("PlantDetailsRoom", planta.toString())
                 plantnameTV.text = planta.name
                 commonNameTV.text = String.format(resources.getString(R.string.Common_name_label), planta.common_name)
                 scientificNameTV.text = String
@@ -65,6 +65,20 @@ class PlantDetailsActivity : AppCompatActivity() {
                 carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level ?: resources.getString(R.string.notAvailable))
             }
         }
+        detailsViewModel.plantDetails.observe(this) { planta ->
+            if (planta != null) {
+                Log.i("PlantDetailsWebAPI", planta.toString())
+                scientificNameTV.text = String
+                    .format(resources.getString(R.string.labelDetailsScientificName),
+                        if (!planta.scientific_name.isNullOrEmpty()) planta.scientific_name.toString().filter { it != '[' && it != ']'}
+                        else resources.getString(R.string.notAvailable))
+                cycleTV.text = String.format(resources.getString(R.string.Cycle_label), planta.cycle ?: resources.getString(R.string.notAvailable))
+                wateringTV.text = String.format(resources.getString(R.string.Watering_label), planta.watering ?: resources.getString(R.string.notAvailable))
+                indoorTV.text = String.format(resources.getString(R.string.Indoor_label), planta.indoor ?: resources.getString(R.string.notAvailable))
+                carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level ?: resources.getString(R.string.notAvailable))
+            }
+        }
+        detailsViewModel.getPlantDetails(id)
 
         deleteButton.setOnClickListener {
             detailsViewModel.deletePlant(id)

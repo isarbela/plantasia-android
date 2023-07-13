@@ -16,7 +16,7 @@ interface PlantInterface {
 
     @GET("species/details/{id}")
     fun getPlantDetails(
-        @Path("id") id: String?,
+        @Path("id") id: Int,
         @Query("key") key: String?
     ): Call<Plant?>?
 }
