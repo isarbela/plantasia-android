@@ -1,5 +1,6 @@
 package com.example.plantasia.ui
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.plantasia.R
 import com.example.plantasia.repository.Plant
 
-class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(PlantsComparator()) {
+class PlantListAdapter(val context: Context) : ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(PlantsComparator()) {
+
 
     var onItemClick : ( (Plant) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
-        return PlantViewHolder.create(parent)
+        return PlantViewHolder.create(parent, context)
     }
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
@@ -26,7 +28,7 @@ class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(Pla
         }
     }
 
-    class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class PlantViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.name_edittext)
         private val speciesTextView: TextView = itemView.findViewById(R.id.species_edittext)
         private val ageTextView: TextView = itemView.findViewById(R.id.age_edittext)
@@ -34,15 +36,14 @@ class PlantListAdapter: ListAdapter<Plant, PlantListAdapter.PlantViewHolder>(Pla
         fun bind(name: String?, species: String?, age: Int?) {
             nameTextView.text = name
             speciesTextView.text = species
-            ageTextView.text = "%s"
-                .format(age.toString())
+            ageTextView.text = String.format(context.getString(R.string.Age_label), age)
         }
 
         companion object {
-            fun create(parent: ViewGroup): PlantViewHolder {
+            fun create(parent: ViewGroup, context: Context): PlantViewHolder {
                 val view: View = LayoutInflater.from(parent.context)
                     .inflate(R.layout.recyclerview_item, parent, false)
-                return PlantViewHolder(view)
+                return PlantViewHolder(view, context)
             }
         }
     }
