@@ -2,6 +2,7 @@ package com.example.plantasia
 
 import android.app.Application
 import com.example.plantasia.repository.PlantRoomDatabase
+import com.example.plantasia.repository.PlantRoomRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 

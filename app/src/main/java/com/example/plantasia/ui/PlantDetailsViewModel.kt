@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.plantasia.PlantRoomRepository
+import com.example.plantasia.repository.PlantRoomRepository
 import com.example.plantasia.repository.Plant
 import com.example.plantasia.repository.PlantRepository
 import kotlinx.coroutines.flow.Flow

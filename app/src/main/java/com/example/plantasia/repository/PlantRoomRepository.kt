@@ -1,4 +1,4 @@
-package com.example.plantasia
+package com.example.plantasia.repository
 
 import androidx.annotation.WorkerThread
 import com.example.plantasia.repository.Plant
