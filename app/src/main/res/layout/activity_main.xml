@@ -58,10 +58,11 @@
         android:layout_height="500sp"
         android:paddingVertical="16sp"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/recyclerview_item"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_plant"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_your_plants" />
+        app:layout_constraintTop_toBottomOf="@+id/title_your_plants"
+        tools:listitem="@layout/recyclerview_item" />
 
     <Button
         android:id="@+id/button_add_plant"

@@ -3,6 +3,7 @@ package com.example.plantasia.repository
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.FileDescriptor
 import java.io.Serializable
 
 
@@ -28,4 +29,6 @@ data class Plant(
     val care_level: String? = null,
     @ColumnInfo(name = "age")
     val age: Int = 0,
+    @ColumnInfo(name = "description")
+    val description: String? = null
 ): Serializable

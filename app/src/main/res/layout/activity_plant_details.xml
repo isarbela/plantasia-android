@@ -24,11 +24,11 @@
         android:id="@+id/scrollView2"
         android:layout_width="380dp"
         android:layout_height="0dp"
-        android:padding="8sp"
         android:layout_marginTop="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/mulish"
+        android:padding="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/plantNameTV"
         app:layout_constraintTop_toBottomOf="@+id/plantNameTV">
 
@@ -41,70 +41,80 @@
                 android:id="@+id/commonNameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Common_name_label"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
+                android:text="@string/Common_name_label"
                 android:textColor="@color/pinkshwhite"
-                android:textSize="20sp"
-                android:layout_marginBottom="8sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/scientificNameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/labelDetailsScientificName"
                 android:textColor="@color/pinkshwhite"
-                android:textSize="20sp"
-                android:layout_marginBottom="8sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/cycleTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/Cycle_label"
                 android:textColor="@color/pinkshwhite"
-                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/wateringTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/Watering_label"
                 android:textColor="@color/pinkshwhite"
-                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/indoorTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/Indoor_label"
                 android:textColor="@color/pinkshwhite"
-                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/carelevelTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/CareLevel_label"
                 android:textColor="@color/pinkshwhite"
-                android:layout_marginBottom="8sp"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/ageTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8sp"
                 android:fontFamily="@font/mulish"
                 android:text="@string/Age_label"
                 android:textColor="@color/pinkshwhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8sp"
+                android:fontFamily="@font/mulish"
+                android:text="@string/descriptionLabel"
+                android:textColor="@color/pinkshwhite"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>

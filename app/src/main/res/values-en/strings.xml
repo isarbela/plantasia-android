@@ -24,4 +24,5 @@
     <string name="plant">Plant</string>
     <string name="delete_plant_label">Delete plant</string>
     <string name="notAvailable">Unavailable</string>
+    <string name="descriptionLabel">Description: %s</string>
 </resources>

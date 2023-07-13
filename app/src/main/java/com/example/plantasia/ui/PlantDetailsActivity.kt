@@ -1,5 +1,6 @@
 package com.example.plantasia.ui
 
+import android.content.ClipDescription
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,6 +28,7 @@ class PlantDetailsActivity : AppCompatActivity() {
     private lateinit var indoorTV: TextView
     private lateinit var carelevelTV: TextView
     private lateinit var ageTV: TextView
+    private lateinit var descriptionTV: TextView
     private lateinit var deleteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +49,9 @@ class PlantDetailsActivity : AppCompatActivity() {
         indoorTV = findViewById(R.id.indoorTV)
         carelevelTV = findViewById(R.id.carelevelTV)
         ageTV = findViewById(R.id.ageTV)
+        descriptionTV = findViewById(R.id.descriptionTV)
         deleteButton = findViewById(R.id.deleteButton)
+
 
 
         detailsViewModel.getPlant(plant.Roomid).asLiveData().observe(this) { planta ->
@@ -77,6 +81,7 @@ class PlantDetailsActivity : AppCompatActivity() {
                 wateringTV.text = String.format(resources.getString(R.string.Watering_label), planta.watering ?: resources.getString(R.string.notAvailable))
                 indoorTV.text = String.format(resources.getString(R.string.Indoor_label), planta.indoor ?: resources.getString(R.string.notAvailable))
                 carelevelTV.text = String.format(resources.getString(R.string.CareLevel_label), planta.care_level ?: resources.getString(R.string.notAvailable))
+                descriptionTV.text = String.format(resources.getString(R.string.descriptionLabel), planta.description ?: resources.getString(R.string.notAvailable))
             }
         }
         detailsViewModel.getPlantDetails(plant.id + 1)
