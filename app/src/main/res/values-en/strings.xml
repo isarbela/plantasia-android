@@ -2,7 +2,7 @@
 <resources>
     <string name="add_plant">+ Add Plant</string>
     <string name="label_your_plants">Your Plants</string>
-    <string name="empty_list">No plants added yet :(</string>
+    <string name="empty_list">No plants have been added yet</string>
     <string name="button_save">Save Plant</string>
     <string name="title_activity_new_plant">Add New Plant</string>
     <string name="label_plant_name">Name</string>
